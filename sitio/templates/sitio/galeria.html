@@ -1,1 +1,59 @@
 {% extends 'pages\base.html' %}
+{% load static %}
+
+{% block page_content %}
+    <div class="container-md pt-3 bg-dark text-dark">
+    <h2>Galeria</h2>
+        <div class="row">
+            <div class="card ml-4 mr-3 mt-2" style="width:25rem">
+                <img class="card-img-top ml-2 mt-2" src="{% static 'base/img/02.jpg' %}" alt="Card image" style="width:95%">
+                <h4 class="card-title ml-2 mt-1">Trufas</h4>
+                <div class="card-body">
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <div class="card-footer">
+                    Precio: 88,888.00
+                </div>
+            </div>
+            <div class="card mr-3 mt-2" style="width:25rem">
+                <img class="card-img-top ml-2 mt-2" src="{% static 'base/img/04.jpg' %}" alt="Card image" style="width:95%">
+                <h4 class="card-title ml-2 mt-1">Tabletas</h4>
+                <div class="card-body">
+                    <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                    <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <div class="card-footer">
+                    Precio: 88,888.00
+                </div>
+                
+            </div>
+            <div class="card mt-2" style="width:25rem">
+                <img class="card-img-top ml-2 mt-2" src="{% static 'base/img/gallery/g06.jpg' %}" alt="Card image" style="width:95%">
+                <div class="card-body">
+                <h4 class="card-title">Bombones</h4>
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <div class="card-footer">
+                    Precio: 88,888.00
+                </div>
+            </div>
+
+            <div class="card ml-4 mr-3 mt-2 mb-2" style="width:25rem">
+                <img class="card-img-top ml-2 mt-2" src="{% static 'base/img/gallery/g06.jpg' %}" alt="Card image" style="width:95%">
+                <div class="card-body">
+                <h4 class="card-title">Bombones</h4>
+                <p class="card-text">Some example text some example text. Jane Doe is an architect and engineer</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+                </div>
+                <div class="card-footer">
+                    Precio: 88,888.00
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+{% endblock footer %}
