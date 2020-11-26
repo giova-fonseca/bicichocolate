@@ -21,15 +21,15 @@
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
     <div id="logo" class="fl_left">
-      <h1><a href="index.html">Bici Chocolate</a></h1>
+      <h1><a href="{% url 'sitio:index' %}">Bici Chocolate</a></h1>
     </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
-        <li><a href="index.html"><i class="fa fa-lg fa-home"></i></a></li>        
-        <li class="active"><a href="index.html">Inicio</a></li>
-        <li><a href="pages/gallery.html">Galeria</a></li>
-        <li><a href="pages/full-width.html">Sobre el chocolate</a></li>
-        <li><a href="pages/sidebar-left.html">Seguir en contacto</a></li>
+        <li><a href="{% url 'sitio:index' %}"><i class="fa fa-lg fa-home"></i></a></li>        
+        <li class="active"><a href="{% url 'sitio:index' %}">Inicio</a></li>
+        <li><a href="{% url 'sitio:galeria' %}">Galeria</a></li>
+        <li><a href="{% url 'sitio:about' %">Sobre el chocolate</a></li>
+        <li><a href="{% url 'sitio:contact' %}">Seguir en contacto</a></li>
       </ul>
     </nav>
   </header>
