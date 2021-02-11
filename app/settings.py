@@ -27,6 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ggcqg34))k#8!_nvg&aiy^4oy-c6mn5gyq$2mro-%ew=1#6k&p'
+#SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -129,9 +130,19 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
 
 MEDIA_ROOT = '/base/img/'
 MEDIA_URL = '/base/img/'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
