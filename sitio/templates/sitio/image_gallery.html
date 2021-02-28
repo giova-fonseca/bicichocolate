@@ -1,0 +1,21 @@
+{% extends 'pages\base.html' %}
+{% load static %}
+
+
+  {% block page_content %}
+    <div class="container-md pt-3 bg-dark text-dark">
+      <div class="row">        
+          {% for image in images %}     
+              <div class="col-4;">
+                <div class="card ml-4 mr-2 mt-2 mb-2" style="width:25rem; height:35rem;">
+                      <h4 class="card-title ml-2 mt-1">{{image.name}}</h4>
+                      <img class="card-img-top ml-2 mt-2" src="{{image.image.url}}" alt="Card image" 
+                        style="image-rendering: auto; align-self:center; height:400px; width:275px">
+                  </div>
+              </div>
+          {% endfor %}
+      </div>
+  </div>  
+  {% endblock %}
+  {% block footer %}
+  {% endblock %}

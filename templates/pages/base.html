@@ -12,6 +12,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
+
+  <!--Jquery-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!--Floating WhatsApp css-->
+  <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
+  <!--Floating WhatsApp javascript-->
+  <script type="text/javascript" src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.js"></script>  
+
 </head>
 <body id="top">
 {% block top_bar %}
@@ -28,15 +36,14 @@
 </div>
 <div class="wrapper row1">
   <header id="header" class="hoc clear"> 
-    <div id="logo" class="fl_left">
-      <h1><a href="{% url 'sitio:index' %}">Bici Chocolate</a></h1>
-    </div>
     <nav id="mainav" class="fl_right">
       <ul class="clear">
         <li><a href="{% url 'sitio:index' %}"><i class="fa fa-lg fa-home"></i></a></li>        
         <li class="active"><a href="{% url 'sitio:index' %}">Inicio</a></li>
-        <li><a href="{% url 'sitio:galeria' %}">Nuestras creaciones</a></li>
-        <li><a href="{% url 'sitio:about' %}">Sobre el chocolate</a></li>
+        <li><a href="{% url 'sitio:about' %}">Sobre Nosotros</a></li>
+        <li><a href="{% url 'sitio:productos' %}">Productos</a></li>
+        <li><a href="{% url 'sitio:image_gallery' %}">Galeria</a></li>        
+        <li><a href="{% url 'sitio:galeria' %}">Puntos de venta</a></li>
         <li><a href="{% url 'sitio:contact' %}">Seguir en contacto</a></li>
       </ul>
     </nav>
@@ -45,27 +52,23 @@
 {% endblock top_bar %}
 
 {% block page_content %}
-
-<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/bg01.png' %}');">
+<div class="wrapper bgded" style="height:400px; width:100%; background-image:url('{% static 'base/img/backgrounds/Bicichocolate_09.png' %}');">
   <div id="pageintro" class="hoc clear"> 
     <article>
       <p>¡Para los que disfrutan del</p>
       <h3 class="heading">Autentico sabor!...</h3>
-      <footer>
-        <ul class="nospace inline pushright">
-          <figure><a href="#"><img src="{% static 'base/img/240x240.png' %}" alt=""></a>
-          </figure>         
-        </ul>
-      </footer>
     </article>
   </div>
 </div>
+<br>
+<br>
+<br>
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
     <section id="introblocks">
       <div class="sectiontitle">
-        <h6 class="heading">Tellus malesuada dignissim</h6>
+        <h6 class="heading">Estos son nuestros pilares</h6>
         <p>Nullam tincidunt ex vel volutpat accumsan ut lobortis metus</p>
       </div>
       <ul class="nospace btmspace-80 group">
@@ -148,41 +151,6 @@
     <footer class="one_quarter"><a class="btn" href="#">Neque mauris nunc &raquo;</a></footer>
   </article>
 </div>
-<div class="wrapper row2">
-  <section class="hoc container clear testimonials"> 
-    <div class="sectiontitle">
-      <h6 class="heading">Efficitur posuere tellus non</h6>
-      <p>Mattis turpis praesent dignissim et libero non luctus vivamus</p>
-    </div>
-    <ul class="nospace group btmspace-80">
-      <li class="one_third first">
-        <blockquote>Imperdiet libero ac sapien facilisis ultricies aliquam gravida ligula quis commodo interdum purus felis rutrum velit non tincidunt arcu orci eget nulla etiam laoreet volutpat mollis mauris</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'base/img/60x60.png' %}" alt="">
-          <figcaption>
-            <h6 class="heading">Andre Ulate</h6>
-            <em>Consultant</em></figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <blockquote>Et tellus nibh nullam sit amet mauris consequat vehicula velit non aliquam erat maecenas egestas dui et velit viverra in tincidunt neque consectetur quisque metus arcu suscipit rutrum euismod</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'base/img/60x60.png' %}" alt="">
-          <figcaption>
-            <h6 class="heading">Daneil Pacheco</h6>
-            <em>Director</em></figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <blockquote>Consequat venenatis vestibulum enim phasellus id molestie mi nec vulputate massa phasellus ut ligula hendrerit lobortis nibh ac laoreet sapien morbi id sagittis nulla vulputate fringilla felis</blockquote>
-        <figure class="clear"><img class="circle" src="{% static 'base/img/60x60.png' %}" alt="">
-          <figcaption>
-            <h6 class="heading">June Doe</h6>
-            <em>Marketing</em></figcaption>
-        </figure>
-      </li>
-    </ul>
-    <footer><a class="btn" href="#">View More &raquo;</a></footer>
-  </section>
-</div>
 <div class="wrapper row3">
   <figure class="hoc container clear clients"> 
     <figcaption class="sectiontitle">
@@ -258,8 +226,7 @@
 </div>
 <div class="wrapper row5">
     <div id="copyright" class="hoc clear"> 
-        <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
-        <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+        <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">bicichocolate.net</a></p>
     </div>
 </div>
 </div>
@@ -269,5 +236,20 @@
 <script src="{% static 'base/js/jquery.min.js' %}"></script>
 <script src="{% static 'base/js/jquery.backtotop.js' %}"></script>
 <script src="{% static 'base/js/jquery.mobilemenu.js' %}"></script>
+<script>
+$(function() {
+  $('#WAButton').floatingWhatsApp({
+    phone: '86491515', //WhatsApp Business phone number International format-
+    //Get it with Toky at https://toky.co/en/features/whatsapp.
+    headerTitle: 'Chat with us on WhatsApp!', //Popup Title
+    popupMessage: 'Hello, how can we help you?', //Popup Message
+    showPopup: true, //Enables popup display
+    buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />', //Button Image
+    //headerColor: 'crimson', //Custom header color
+    //backgroundColor: 'crimson', //Custom background button color
+    position: "right"    
+  });
+});
+</script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+{% extends 'pages\base.html' %}
+{% load humanize %}
+{% load static %}
+
+{% block page_content %}
+    <h2 style="margin-left: 4rem;">Nuestras creaciones</h2>
+    <div class="container-md pt-3 bg-dark text-dark">
+        <div class="row">
+            {% for product in products %}     
+                <div class="col-4;">
+                    <div class="card ml-4 mr-2 mt-2 mb-2" style="width:25rem; height:35rem;">
+                        <img class="card-img-top ml-2 mt-2" src="{{product.image.image.url}}" alt="Card image" style="image-rendering: auto; align-self:center; height:65%; width:auto">
+                        <h4 class="card-title ml-2 mt-1">{{product.name}}</h4>
+                        <div class="card-body">
+                            <p>
+                                {{product.descripcion}}
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Precio: {{ product.price|intcomma:0 }}</b>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+{% endblock %}
+
+{% block footer %}
+{% endblock footer %}
