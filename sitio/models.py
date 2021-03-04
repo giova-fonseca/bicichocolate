@@ -19,7 +19,8 @@ class POS(models.Model):
     direction = models.CharField(max_length=250, blank=False)
     direccion = models.CharField(max_length=250, blank=False)
     telephone = models.CharField(max_length=12)
-    logo = models.ForeignKey(Image, on_delete=models.CASCADE)
+    logo = models.ImageField(
+        upload_to='logo', default='sitio/static/images/no-img.jpg')
 
     def __str__(self):
         return '{}'.format(self.name)

@@ -14,6 +14,7 @@ urlpatterns = [
     path('productos', sitio_views.productos, name='productos'),
     path('upload_image', sitio_views.upload_image, name='upload_image'),
     path('image_gallery', sitio_views.image_gallery, name='image_gallery'),
+    path('puntos_ventas', sitio_views.puntos_ventas, name='puntos_ventas'),
     path('about', sitio_views.about, name='about'),
     path('contact', sitio_views.contact, name='contact'),
 ]

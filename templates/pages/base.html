@@ -14,7 +14,7 @@
 
 
   <!--Jquery-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!--Floating WhatsApp css-->
   <link rel="stylesheet" href="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/floating-wpp.min.css">
   <!--Floating WhatsApp javascript-->
@@ -43,7 +43,7 @@
         <li><a href="{% url 'sitio:about' %}">Sobre Nosotros</a></li>
         <li><a href="{% url 'sitio:productos' %}">Productos</a></li>
         <li><a href="{% url 'sitio:image_gallery' %}">Galeria</a></li>        
-        <li><a href="{% url 'sitio:galeria' %}">Puntos de venta</a></li>
+        <li><a href="{% url 'sitio:puntos_ventas' %}">Puntos de venta</a></li>
         <li><a href="{% url 'sitio:contact' %}">Seguir en contacto</a></li>
       </ul>
     </nav>
@@ -116,7 +116,7 @@
       </div>
       <ul class="nospace group overview">
         <li class="one_third">
-          <figure><a href="#"><img src="{% static 'base/img/cacao320x240.jpg' %}" alt=""></a>
+          <figure><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_18.jpg' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Cuidados procesos de producción</h6>
               <p>Con lo que optenemos materias primas de excelente calidad.</p>
@@ -124,7 +124,7 @@
           </figure>
         </li>
         <li class="one_third">
-          <figure><a href="#"><img src="{% static 'base/img/320x360.png' %}" alt=""></a>
+          <figure><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_58.jpg' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Cuidadosa producción artesanal</h6>
               <p>Cuidando cada detalle durante cada lote de producción, es logramos y mantenemos nuestra calidad.</p>
@@ -132,7 +132,7 @@
           </figure>
         </li>
         <li class="one_third">
-          <figure><a href="#"><img src="{% static 'base/img/tableta.jpg' %}" alt=""></a>
+          <figure><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_68.jpg' %}" alt=""></a>
             <figcaption>
               <h6 class="heading">Fusce facilisis congue</h6>
               <p>Sapien sit amet tempor nisl mollis sed sed tristique nunc pretium mi.</p>
@@ -147,7 +147,7 @@
 </div>
 <div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/bg02.png' %}');">
   <article class="hoc cta clear"> 
-    <h6 class="three_quarter first">Gravida venenatis morbi a interdum erat id congue</h6>
+    <h6 class="three_quarter first">Del Cacao a nuestro paladar</h6>
     <footer class="one_quarter"><a class="btn" href="#">Neque mauris nunc &raquo;</a></footer>
   </article>
 </div>
@@ -158,10 +158,10 @@
       <p>Pulvinar sodales suspendisse in purus vel massa fermentum</p>
     </figcaption>
     <ul class="nospace group">
-      <li class="one_quarter first"><a href="#"><img src="{% static 'base/img/01.jpg' %}" alt=""></a></li>
-      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/02.jpg' %}" alt=""></a></li>
-      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/03.jpg' %}" alt=""></a></li>
-      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/04.jpg' %}" alt=""></a></li>
+      <li class="one_quarter first"><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_170.jpg' %}" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_189.jpg' %}" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_66.jpg' %}" alt=""></a></li>
+      <li class="one_quarter"><a href="#"><img src="{% static 'base/img/gallery/Bicichocolate_04.jpg' %}" alt=""></a></li>
     </ul>
   </figure>
 </div>
@@ -249,7 +249,7 @@ $(function() {
     //backgroundColor: 'crimson', //Custom background button color
     position: "right"    
   });
-});
+} );
 </script>
 </body>
 </html>
