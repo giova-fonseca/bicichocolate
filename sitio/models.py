@@ -1,16 +1,6 @@
 from django.db import models
-
+from sorl.thumbnail import ImageField
 # Create your models here.
-
-
-class Image(models.Model):
-    image = models.ImageField(
-        upload_to='gallery', default='sitio/static/images/no-img.jpg')
-    name = models.CharField(max_length=200)
-    nombre = models.CharField(max_length=200)
-
-    def __str__(self):
-        return '{}'.format(self.name)
 
 
 class POS(models.Model):
@@ -94,11 +84,21 @@ class Product(models.Model):
     nombre = models.CharField(max_length=30, blank=False, unique=True)
     description = models.CharField(max_length=250, blank=False)
     descripcion = models.CharField(max_length=250, blank=False)
-    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    #image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    #image = ImageField(upload_to='whatever')
     price = models.FloatField(default=0)
 
     def __str__(self):
         return '{} {}'.format(self.name, self.description)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.featured.url
+        except:
+            url = ''
+        print('URL:', url)
+        return url
 
     def save(self):
         self.name = self.name.upper()
@@ -107,3 +107,23 @@ class Product(models.Model):
 
     class Meta:
         verbose_name_plural = "Products"
+
+
+class Image(models.Model):
+    image = models.ImageField(
+        upload_to='gallery', default='sitio/static/images/no-img.jpg')
+    name = models.CharField(max_length=200)
+    nombre = models.CharField(max_length=200)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return '{}'.format(self.name)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        print('URL:', url)
+        return url

@@ -3,6 +3,8 @@ from django.shortcuts import render
 from .models import *
 from .forms import *
 from django.http import HttpResponseRedirect
+from django.views.generic import TemplateView
+
 # Create your views here.
 
 
@@ -17,6 +19,18 @@ def about(request):
 def productos(request):
     productos = Product.objects.all()
     return render(request, 'sitio/products.html', {'products': productos})
+
+
+def slider(request):
+    products = Product.objects.all()
+    context = {'products': products}
+    return render(request, 'sitio/productsimage.html', context)
+
+
+def slider2(request):
+    product = Product.objects.first()
+    context = {'product': product}
+    return render(request, 'sitio/productsimage.html', context)
 
 
 def contact(request):

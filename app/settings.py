@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'sitio',
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
