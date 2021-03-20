@@ -84,8 +84,8 @@ class Product(models.Model):
     nombre = models.CharField(max_length=30, blank=False, unique=True)
     description = models.CharField(max_length=250, blank=False)
     descripcion = models.CharField(max_length=250, blank=False)
-    #image = models.ForeignKey(Image, on_delete=models.CASCADE)
-    #image = ImageField(upload_to='whatever')
+    imagen = models.ImageField(
+        upload_to='gallery', blank=False, default='sitio/static/images/no-img.jpg')
     price = models.FloatField(default=0)
 
     def __str__(self):

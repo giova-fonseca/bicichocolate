@@ -22,8 +22,8 @@ def productos(request):
 
 
 def slider(request):
-    products = Product.objects.all()
-    context = {'products': products}
+    product = Product.objects.first()
+    context = {'product': product}
     return render(request, 'sitio/productsimage.html', context)
 
 

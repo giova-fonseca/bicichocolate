@@ -3,69 +3,33 @@
 {% load static %}
 
 {% block page_content %}
-    <h2 style="margin-left: 4rem; margin-top:2rem">Nuestras creaciones</h2>
-    <div class="container-md pt-3 bg-dark text-dark">
-        {% for product in products %}     
-        <div class="row">
-			<div id="content-wrapper">
-				<div>
-					<div class="column">
-						<img id="featured" src="{{product.imageURL}}">
-
-						<div id="slide-wrapper">
-							<img id="slideLeft" class="arrow" src="{% static 'base/img/arrow-left.png' %}">
-
-							<div id="slider">
-								{% for image in product.image_set.all%}					
-									<img class="thumbnail" src="{{image.imageURL}}">
-								{% endfor %}			
-							</div>
-							<img id="slideRight" class="arrow" src="{% static 'base/img/arrow-right.png' %}">
+<div class="container-md pt-3 bg-dark text-dark">
+  <div class="row">        
+	  {% for product in products %}     
+		  <div class="col-4;">
+			<div class="card ml-4 mr-2 mt-2 mb-2" style="width:25rem; height:35rem; scroll=true">
+				  <h4 class="card-title ml-2 mt-1">{{product.name}}</h4>
+					
+				  <img class="card-img-top ml-2 mt-2" src="{{product.imagen.url}}" alt="Card image" 
+					style="align-self:center; height:50%; width:auto">
+					<a href="#"></a>
+					<p class="limitado" style="margin-left: 5px;">{{product.description}}</p>
+					<div class="row">
+						<div class="buttons-toolbar">
+							<a class="dropdown-item" onclick="return abrir_modal('{% url 'sitio:Images_Product' %}')" href="#">
+								<i class="fas fa-calendar-plus"></i> Detalles</a>
 						</div>
+					
+						<div style="margin-left: 5px;">
+							PRECIO: ₡{{product.price}}
+						</div>
+	
 					</div>
-
-					<div class="column">
-						<h3>{{product}}</h3>
-						<hr>
-						<h4>{{product.price}}</h4>
-
-						<p>{{product.description}}</p>
-
-					</div>
-				</div>
-				{% endfor %}
-			</div>
-			<script type="text/javascript">
-					let thumbnails = document.getElementsByClassName('thumbnail')
-					let activeImages = document.getElementsByClassName('active')
-					for (var i=0; i < thumbnails.length; i++){
-						thumbnails[i].addEventListener('mouseover', function(){
-
-							if (activeImages.length > 0){
-								activeImages[0].classList.remove('active')
-							}
-						
-							this.classList.add('active')
-							document.getElementById('featured').src = this.src
-						})
-					}
-
-					const buttonRight = document.getElementById('slideRight');
-					const buttonLeft = document.getElementById('slideLeft');
-
-
-					buttonRight.addEventListener('click', function(){
-						document.getElementById('slider').scrollLeft += 180;
-					})
-
-					buttonLeft.addEventListener('click', function(){
-					document.getElementById('slider').scrollLeft -= 180;
-					})
-
-			</script>
-			</div>
-        </div>
-    </div> 
+			  </div>
+		  </div>
+	  {% endfor %}
+  </div>
+</div>  
 {% endblock %}
 
 {% block footer %}

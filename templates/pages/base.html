@@ -11,7 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  <script src="{% static 'base/js/tools.js' %}"></script>
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" type="text/css">
@@ -200,6 +200,56 @@
 <script src="{% static 'base/js/jquery.min.js' %}"></script>
 <script src="{% static 'base/js/jquery.backtotop.js' %}"></script>
 <script src="{% static 'base/js/jquery.mobilemenu.js' %}"></script>
-<script>
+
+{% block control_modal%}
+  <script>
+    function abrir_modal(url)
+    {
+      alert("Funcion JS abrir_modal");
+      $("#popup").load(url, function(){
+        $(this).modal({
+          backdrop:'static',
+          keyboard: false
+        })
+        $(this).modal('show');
+      });
+      return false;
+    }
+
+    function cerrar_modal()
+    {
+      $('#popup').modal('hide');
+      return false;
+    }
+
+    function mensaje(msg,color='green')
+    {
+      if (color=="success")
+      {
+        color="green";
+      }
+      if (color=="error")
+      {
+        color="red";
+      }
+
+
+      $.alert({
+        title:'',
+        theme:'material',
+        type:color,
+        content:msg
+      });
+    }
+
+    {% if messages %}
+      {% for message in messages %}
+        console.log("{{ message.tags }}");
+        mensaje("{{ message }}","{{ message.tags }}");
+      {% endfor %}
+    {% endif %}
+
+  </script>
+{% endblock%}
 </body>
 </html>
