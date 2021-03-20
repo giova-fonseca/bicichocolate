@@ -5,7 +5,7 @@ bootstrap-admin==0.4.4
 colorama==0.4.3
 diagrams==0.17.0
 dj-database-url==0.5.0
-Django==1.8.19
+Django==3.0.4
 django-cors-headers==3.3.0
 django-crispy-forms==1.4.0
 django-crum==0.7.0
@@ -17,11 +17,12 @@ django-grappelli==2.14.2
 django-jet==1.0.8
 django-material==1.7.1
 django-userforeignkey==0.3.0
+django-utils-six==2.0
 django-widget-tweaks==1.4.8
 djangorestframework==3.11.0
 et-xmlfile==1.0.1
-#fontawesome==5.10.1.post1
-#freeze==1.0.10
+fontawesome==5.10.1.post1
+freeze==1.0.10
 graphviz==0.13.2
 gunicorn==20.0.4
 html5lib==1.0.1
@@ -58,7 +59,7 @@ toml==0.10.2
 typed-ast==1.4.2
 typing-extensions==3.7.4.3
 webencodings==0.5.1
-whitenoise==5.1.0
+whitenoise==4.1
 wrapt==1.11.1
 xhtml2pdf==0.2.4
 xlrd==1.2.0
