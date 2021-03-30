@@ -1,0 +1,17 @@
+.not-visible{
+    display: none;
+}
+
+.my-img{
+    cursor: pointer;
+}
+
+/* customize the window */
+.modal-content {
+    border-radius: 15%;
+}
+
+/* customize the backfrop */
+.modal {
+    background-color: rgb(0, 0,0,0.7);
+}

@@ -8,7 +8,7 @@ from sorl.thumbnail.admin import AdminImageMixin
 
 
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('name', 'image')
+    list_display = ('name', 'product', 'image')
 
 
 class CategoryAdmin(admin.ModelAdmin):

@@ -5,22 +5,28 @@
 <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" type="text/css">
 
 {% block page_content %}
-  
 <div class="container-md pt-3 bg-dark text-dark">
   <div class="row">   
 	{% csrf_token %}     
 	  {% for product in products %}     
 		  <div class="col-4;">
-			<div class="card ml-4 mt-1 mb-2" style="width:25rem; height:35rem; scroll=true">
+			<div class="card ml-4 mr-2 mt-2 mb-2" style="width:25rem; height:35rem; scroll=true">
 				  <h4 class="card-title ml-2 mt-1">{{product.name}}</h4>
-				  <img class="card-img-top ml-2 mt-2 mb-2" src="{{product.imagen.url}}" alt="Card image" 
-					style="align-self:center; height:200px; width:auto">
-					<a href="{% url 'sitio:ImagesProduct' product.id %}" class="btn btn-outline-dark btn-sm m-2">View</a>
+				  <img class="card-img-top ml-2 mt-2" src="{{product.imagen.url}}" alt="Card image" 
+					style="align-self:center; height:50%; width:auto">
+					<a href="#"></a>
 					<label hidden="true" id="ID">{{product.id}}</label>
 					<p class="limitado" style="margin-left: 5px;">{{product.description}}</p>
-					<div style="margin-left: 25px;">
-						PRECIO: ₡{{product.price}}
-					</div>
+					<div class="row">
+						<!--
+						<button class="btn btn-warning btn-circle" onclick="return abrir_modal('{% url 'sitio:galeriaProductos' %}')">
+							<i class="fas fa-edit"></i> Detalle
+						</button>				
+						-->
+						<button class="btn btn-primary btn-circle" onclick="alert({{product.id}});"></button>
+						<div style="margin-left: 25px;">
+							PRECIO: ₡{{product.price}}
+						</div>
 					</div>
 			  </div>
 		  </div>

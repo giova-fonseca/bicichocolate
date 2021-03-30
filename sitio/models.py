@@ -85,11 +85,11 @@ class Product(models.Model):
     description = models.CharField(max_length=250, blank=False)
     descripcion = models.CharField(max_length=250, blank=False)
     imagen = models.ImageField(
-        upload_to='gallery', blank=False, default='sitio/static/images/no-img.jpg')
+        upload_to='gallery', blank=False, default='sitio/static/img/no-img.png')
     price = models.FloatField(default=0)
 
     def __str__(self):
-        return '{} {}'.format(self.name, self.description)
+        return '{}'.format(self.name)
 
     @property
     def imageURL(self):
