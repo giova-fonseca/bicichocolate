@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" type="text/css">
 
 {% block page_content %}
-<div class="container-md pt-3 bg-dark text-dark">
+<div class="container-lg pt-2 bg-dark text-dark">
   <div class="row">   
 	{% csrf_token %}     
 	  {% for product in products %}     
@@ -14,7 +14,10 @@
 				  <h4 class="card-title ml-2 mt-1">{{product.name}}</h4>
 				  <img class="card-img-top ml-2 mt-2" src="{{product.imagen.url}}" alt="Card image" 
 					style="max-width: 90%; align-self:center; height:50%; width:auto">
-					<a href="{% url 'sitio:ImagesProduct' product.id %}" class="btn btn-outline-dark btn-sm m-2">View</a>
+					<a class="btn btn-outline-dark btn-sm m-2" onclick="return abrir_modal('{% url 'sitio:ImagesProduct' product.id  %}')" href="#">
+						<i class="fas fa-calendar-plus"></i> Ver
+					</a>
+
 					<label hidden="true" id="ID">{{product.id}}</label>
 					<p class="limitado" style="margin-left: 5px;">{{product.description}}</p>
 					<div class="row">
