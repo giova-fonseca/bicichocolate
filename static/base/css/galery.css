@@ -2,8 +2,8 @@
 body{
 
 }
-
 #content-wrapper{
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -11,9 +11,13 @@ body{
 }
 
 .column{
-    width: 600px;
+    margin-top: 20px;
+    width: 90%;
     padding: 10px;
-
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 #featured{
@@ -24,8 +28,6 @@ body{
     border: 2px solid black;
 
 }
-
-
 
 .thumbnail{
     object-fit: cover;

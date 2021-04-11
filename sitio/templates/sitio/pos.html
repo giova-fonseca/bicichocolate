@@ -9,22 +9,22 @@
       <h6 class="heading">Adquiere nuestros productos en el punto más cercano</h6>
       <p>Contamos con los siguientes puntos de ventas.</p>
     </div>
-    <ul class="nospace group overview">
-
+    <div class="container-lg mb-2 bg-dark text-white">
+      <div class="row">       
         {% for punto in puntosventas %}     
-
             <li class="one_third">
                 <figure>
-                    <a href="#"><img src="{{punto.logo.url}}" style="width: 220px; height=110px;"  alt=""></a>
+                    <a href="#"><img src="{{punto.logo.url}}" style="image-align: center; width: 220px; height=110px;"  alt=""></a>
                 <figcaption>
-                    <h6 class="heading">{{punto.name}}</h6>
-                    <p>Dirección: {{punto.direction}}</p>
-                    <p>Teléfono: {{punto.telephone}}</p>
+                    <h6 class="heading" style="margin-left: 5px;">{{punto.name}}</h6>
+                    <p style="margin-left: 5px;">Dirección: {{punto.direction}}</p>
+                    <p style="margin-left: 5px;">Teléfono: {{punto.telephone}}</p>
                 </figcaption>
                 </figure>
             </li>
         {% endfor %}
-    </ul>
+      </div>
+    </div>
   </section>
 </div>
   {% endblock %}
