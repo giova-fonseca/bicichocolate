@@ -1,4 +1,4 @@
-{% extends 'pages\base.html' %}
+{% extends 'pages\base2.html' %}
 {% load static %}
 
 
@@ -13,9 +13,9 @@
       <div class="row">       
         {% for punto in puntosventas %}     
             <li class="one_third">
-                <figure>
+                <figure style="padding: 10px;">
                     <a href="#"><img src="{{punto.logo.url}}" style="image-align: center; width: 220px; height=110px;"  alt=""></a>
-                <figcaption>
+                <figcaption style="padding: 10px;">
                     <h6 class="heading" style="margin-left: 5px;">{{punto.name}}</h6>
                     <p style="margin-left: 5px;">Dirección: {{punto.direction}}</p>
                     <p style="margin-left: 5px;">Teléfono: {{punto.telephone}}</p>

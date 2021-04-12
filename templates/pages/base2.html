@@ -11,7 +11,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <!--<script type="text/javascript;" src="{% static 'base/js/jquery-3.3.1.min.js' %}"></script> 
   <script type="text/javascript;" src="{% static 'base/js/popper.min.js' %}"></script> -->
-  <script type="text/javascript;" src="{% static 'base/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script type="text/javascript;" src="{% static 'base/vendor/bootstrap-4.5.3/bootstrap.bundle.min.js' %}"></script> 
   <script type="text/javascript;" src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" ></script>
   <!-- Css Styles -->
   <link rel="stylesheet" href="{% static 'base/css/bootstrap.min.css' %}" type="text/css">
@@ -47,6 +47,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js"></script>
 </head>
 <body id="top">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <a href="https://api.whatsapp.com/send?phone=50686491515&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20productos%20." class="float" target="_blank">
+      <i class="fa fa-whatsapp my-floatWhatsApp"></i>
+    </a>
+  
 {% block top_bar %}
   
 <div class="wrapper row0">
@@ -63,7 +69,7 @@
     </div>
   </div>
 </div>
-<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/bg02.png' %}');">
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/rivete5.jpg' %}'); height:50px;">
   <header id="header" class="hoc clear"> 
     <nav id="mainav" class="fl_right">      
       <ul class="clear">
@@ -73,7 +79,6 @@
         <li style="font-family: Playfair Display;"><a href="{% url 'sitio:productos' %}">Productos</a></li>
         <li style="font-family: Copperplate;"><a href="{% url 'sitio:image_gallery' %}">Galeria</a></li>        
         <li style="font-family: Playfair Display;"><a href="{% url 'sitio:puntos_ventas' %}">Puntos de venta</a></li>
-        <li style="font-family: Copperplate;"><a href="{% url 'sitio:galeriaProductos' %}">Galeria Producto</a></li>
         <li style="font-family: Playfair Display;"><a href="{% url 'sitio:contact' %}">Seguir en contacto</a></li>
       </ul>
     </nav>
@@ -85,7 +90,7 @@
 {% endblock top_bar %}
 
 {% block page_content %}
-<div class="wrapper bgded" style="height:400px; width:100%; background-image:url('{% static 'base/img/backgrounds/Bicichocolate_09.png' %}');">
+<div class="wrapper bgded" style="height:70%; width:100%; background-image:url('{% static 'base/img/backgrounds/fondo3.png' %}');">
   <div id="pageintro" class="hoc clear"> 
     <article>
       <p style="color: chocolate; font-family: Playfair Display; font-size: 2rem;"> ¡Para los que disfrutan del</p>
@@ -177,16 +182,12 @@
     <div class="clear"></div>
   </main>
 </div>
-<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/bg02.png' %}');">
-  <article class="hoc cta clear"> 
-    <h6 class="three_quarter first">Del Cacao a nuestro paladar</h6>
-    <footer class="one_quarter"><a class="btn" href="#">Neque mauris nunc &raquo;</a></footer>
-  </article>
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/rivete5.jpg' %}'); height:50px">
 </div>
 <div class="wrapper row3">
   <figure class="hoc container clear clients"> 
     <figcaption class="sectiontitle">
-      <h6 class="heading">Nullam scelerisque orci eu</h6>
+      <h6 class="heading">Del cacao a nuestro paladar</h6>
       <p>Pulvinar sodales suspendisse in purus vel massa fermentum</p>
     </figcaption>
     <ul class="nospace group">
@@ -204,7 +205,7 @@
 
 {% endblock footer %}
 </div>
-<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/bg02.png' %}');">
+<div class="wrapper bgded overlay" style="background-image:url('{% static 'base/img/backgrounds/rivete5.jpg' %}');">
     <div id="copyright" class="hoc clear"> 
         <p class="fl_left">Copyright &copy; 2021 - All Rights Reserved - <a href="#">bicichocolate.net</a></p>
     </div>
@@ -244,8 +245,7 @@
 
     function cerrar_modal()
     {
-      $('#popup').modal('hide');
-      console.log("Cerrar MODAL");
+      $("#popup").modal("hide");
       return false;
     }
 
