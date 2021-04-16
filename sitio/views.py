@@ -39,16 +39,16 @@ def slider(request):
     # return render(request, 'sitio/modal.html', context)
 
 
-class ProductSlider(generic.ListView):
-    model = Product
+# class ProductSlider(generic.ListView):
+#     model = Product
 
-    product = Product.objects.first()
-    context = {'product': product}
+#     product = Product.objects.first()
+#     context = {'product': product}
 
-    template_name = "sitio/modal.html"
-    context_object_name = "obj"
-    success_url = reverse_lazy("sitio:productos")
-    success_message = "Listado exitoso"
+#     template_name = "sitio/modal.html"
+#     context_object_name = "obj"
+#     success_url = reverse_lazy("sitio:productos")
+#     success_message = "Listado exitoso"
 
 
 def slider2(request, pk):

@@ -30,7 +30,7 @@ SECRET_KEY = 'ggcqg34))k#8!_nvg&aiy^4oy-c6mn5gyq$2mro-%ew=1#6k&p'
 #SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
@@ -163,7 +163,8 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # (os.path.join(BASE_DIR, 'static'),)
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
