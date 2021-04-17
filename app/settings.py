@@ -30,7 +30,7 @@ SECRET_KEY = 'ggcqg34))k#8!_nvg&aiy^4oy-c6mn5gyq$2mro-%ew=1#6k&p'
 #SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 #ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.humanize',
     'sitio',
-    'sorl.thumbnail',
+    # 'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
