@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -59,7 +60,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django_userforeignkey.middleware.UserForeignKeyMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'app.urls'
@@ -152,9 +152,9 @@ USE_TZ = True
 
 
 #MEDIA_ROOT = '/base/img/'
-#MEDIA_URL = '/base/img/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'base/img', 'media_root')
-MEDIA_URL = os.path.join(BASE_DIR, 'base/img', 'media_url')
+MEDIA_URL = '/base/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, '/static/base/img/', 'media_root')
+#MEDIA_URL = os.path.join(BASE_DIR, '/static/base/img/', 'media_url')
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
