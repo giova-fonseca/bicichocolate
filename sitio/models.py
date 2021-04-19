@@ -9,8 +9,7 @@ class POS(models.Model):
     direction = models.CharField(max_length=250, blank=False)
     direccion = models.CharField(max_length=250, blank=False)
     telephone = models.CharField(max_length=12)
-    logo = models.ImageField(
-        upload_to='logo', default='sitio/static/images/no-img.jpg')
+    logo = models.ImageField(upload_to='logo',blank=True)
 
     def __str__(self):
         return '{}'.format(self.name)
