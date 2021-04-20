@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 #import os
 #from pathlib import Path
 
-
+import django_heroku
 import os
 from decouple import config
 import dj_database_url
@@ -152,8 +152,8 @@ USE_TZ = True
 
 
 #MEDIA_ROOT = '/base/img/'
-MEDIA_URL = '/base/img/'
 MEDIA_ROOT = os.path.join(BASE_DIR, '/static/base/img/', 'media_root')
+MEDIA_URL = '/base/img/'
 #MEDIA_URL = os.path.join(BASE_DIR, '/static/base/img/', 'media_url')
 
 
@@ -180,3 +180,5 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+django_heroku.settings(locals())
