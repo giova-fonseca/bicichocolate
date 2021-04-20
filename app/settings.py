@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 #import os
 #from pathlib import Path
 
-import django_heroku
 import os
 from decouple import config
 import dj_database_url
@@ -180,5 +179,3 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
-
-django_heroku.settings(locals())
