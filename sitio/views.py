@@ -82,11 +82,9 @@ def image_gallery(request):
     images = Image.objects.all()
     return render(request, 'sitio/image_gallery.html', {'images': images})
 
-
 def puntos_ventas(request):
     puntosventas = POS.objects.all()
     return render(request, 'sitio/pos.html', {'puntosventas': puntosventas})
-
 
 class PictureView(View):
     def get(self, request):

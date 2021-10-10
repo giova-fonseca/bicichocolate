@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(('sitio.urls', 'sitio'), namespace='bases')),
     path('sitio/', include(('sitio.urls', 'sitio'), namespace='sitio')),
+    path('', include('api.urls')),
 ]

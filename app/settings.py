@@ -14,7 +14,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from decouple import config
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +31,7 @@ SECRET_KEY = 'ggcqg34))k#8!_nvg&aiy^4oy-c6mn5gyq$2mro-%ew=1#6k&p'
 DEBUG = True
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ["127.0.0.1", ".herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost",".herokuapp.com"]
 
 
 # Application definition
@@ -45,7 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'dj_database_url',
     'sitio',
+    'rest_framework',
+    'ckeditor',
     # 'sorl.thumbnail',
 ]
 
@@ -95,11 +97,17 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_bicichocolate',
-        'HOST': 'localhost',
+        'NAME': 'BicichocolateDB',
+        'HOST': 'db',
         'USER': 'postgres',
         'PASSWORD': 'silver',
-        'PORT': 5432
+        'PORT': 5432,        
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': os.environ['POSTGRES_DB'],
+        # 'HOST': os.environ['POSTGRES_HOST'],
+        # 'USER': os.environ['POSTGRES_USER'],
+        # 'PASSWORD': os.environ['POSTGRES_PASSWORD'],
+        # 'PORT': os.environ['POSTGRES_PORT'],
     }
 }
 
@@ -151,8 +159,9 @@ USE_TZ = True
 
 
 #MEDIA_ROOT = '/base/img/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '/static/base/img/', 'media_root')
-MEDIA_URL = '/base/img/'
+#MEDIA_ROOT = os.path.join(BASE_DIR, '/static/base/img/', 'media_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 #MEDIA_URL = os.path.join(BASE_DIR, '/static/base/img/', 'media_url')
 
 
@@ -161,7 +170,6 @@ STATIC_URL = '/static/'
 # Extra places for collectstatic to find static files.
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # (os.path.join(BASE_DIR, 'static'),)
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
@@ -171,8 +179,17 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/login/'
 
 # Update database configuration with $DATABASE_URL.
+import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  
+STATIC_URL = '/static/'# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (  
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 INTERNAL_IPS = [
     # ...
