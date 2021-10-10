@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'dj_database_url',
     'sitio',
     'rest_framework',
-    'ckeditor',
     # 'sorl.thumbnail',
 ]
 
