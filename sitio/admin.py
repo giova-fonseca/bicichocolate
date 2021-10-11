@@ -1,7 +1,7 @@
 # Register your models here.
 from django.contrib import admin
 
-from sitio.models import Image, ChocolateType, Category, Product, Flavor, PruebaFecha
+from sitio.models import Image, ChocolateType, Category, PointSale, Product, Flavor, PruebaFecha
 from sorl.thumbnail.admin import AdminImageMixin
 from .forms import ProductForm, PruebaFechaAdminForm
 
@@ -56,4 +56,4 @@ admin.site.register(Flavor)
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Image, ImageAdmin)
 admin.site.register(PruebaFecha, PruebaFechaAdmin)
-#admin.site.register(POS)
+admin.site.register(PointSale)
